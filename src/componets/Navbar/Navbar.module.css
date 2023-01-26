@@ -1,0 +1,12 @@
+.nav {
+    grid-area: n;
+    background-color: cyan;
+}
+
+.iteam {
+    color: white;
+}
+
+.iteam.active {
+    color: yellow;
+}

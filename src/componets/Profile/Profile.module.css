@@ -1,0 +1,7 @@
+.content {
+  grid-area: c;
+  background-color: aquamarine;
+}
+.iteam {
+  color: rgb(45, 110, 207);
+}
