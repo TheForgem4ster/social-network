@@ -1,0 +1,8 @@
+.iteam {
+  color: rgb(45, 110, 207);
+}
+.iteam img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
