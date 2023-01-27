@@ -4,7 +4,7 @@ import s from './Profile.module.css';
 
 const Profile = () => {
     return(
-        <main className={s.content}>
+        <main>
           <div>
             <img src='http://pics.livejournal.com/anchiktigra/pic/001dgz1h'/>
           </div>
