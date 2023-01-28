@@ -9,8 +9,9 @@ const MyPost = (props) => {
     let newPostText = React.createRef();
 
     let addPost = () =>{
+        debugger;
         let text = newPostText.current.value;
-        alert(text);
+        props.addPost(text);
     }
 
     return (

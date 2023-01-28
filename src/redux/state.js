@@ -19,9 +19,19 @@ let state = {
             {id: 3, message: "Good"},
         ],
     },
-    sidebar: {
-
-    },
+    sidebar: {},
 }
+
+export let addPost = (postMessage) => {
+    debugger;
+    let newPost = {
+        id: 5,
+        message: postMessage,
+        likeCounter: 0,
+    }
+    state.profilePage.posts.push(newPost);
+
+}
+
 
 export default state;
