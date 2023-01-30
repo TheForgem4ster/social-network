@@ -2,10 +2,11 @@ import './App.css';
 import Header from './componets/Header/Header';
 import Navbar from './componets/Navbar/Navbar';
 import Profile from './componets/Profile/Profile';
-import Dialogs from "./componets/Dialogs/Dialogs";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
+import DialogsContainer from "./componets/Dialogs/DialogsContainer";
 
 function App(props) {
+
     return (
         <BrowserRouter>
             <div className='app-wrapper'>
@@ -13,9 +14,8 @@ function App(props) {
                 <Navbar/>
                 <div className='app-wrapper-content'>
                     <Routes>
-                        <Route path="/profile" element={<Profile profilePage={props.state.profilePage}
-                                                                 dispatch={props.dispatch}/>}/>
-                        <Route path="/dialogs" element={<Dialogs store={props.store}/>}/>
+                        <Route path="/profile" element={<Profile store={props.store}/>}/>
+                        <Route path="/dialogs" element={<DialogsContainer store={props.store}/>}/>
                     </Routes>
                 </div>
             </div>
