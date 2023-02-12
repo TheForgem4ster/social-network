@@ -10,7 +10,6 @@ let initialState = {
 const autoReducer = (state = initialState, action) => {
     switch(action.type) {
         case SET_USER_DATA:
-            debugger
             return {
                 ...state,
                 ...action.data,
