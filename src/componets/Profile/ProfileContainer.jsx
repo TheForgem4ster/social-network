@@ -10,6 +10,7 @@ import {
     useParams,
 } from "react-router-dom";
 import {usersAPI} from "../../api/api";
+import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 
 class ProfileContainer extends React.Component {
 
@@ -34,8 +35,8 @@ class ProfileContainer extends React.Component {
 
 let mapStateToProps = (state) => ({
     profile: state.profilePage.profile,
-    isAuth: state.auth.isAuth
 });
+
 
 let withUrlDataContainerComponent =  withRouter(ProfileContainer);
 function withRouter(Component) {
@@ -54,4 +55,9 @@ function withRouter(Component) {
     return ComponentWithRouterProp;
 }
 
-export default connect(mapStateToProps, {getUserProfile})(withUrlDataContainerComponent);
+let AuthRedirectComponent = withAuthRedirect(withUrlDataContainerComponent);
+
+
+
+
+export default connect(mapStateToProps, {getUserProfile})(AuthRedirectComponent);
