@@ -1,6 +1,5 @@
 import React from "react";
 import Profile from "./Profile";
-import axios from "axios";
 import {connect} from "react-redux";
 import {getUserProfile} from "../../redux/profile-reducer";
 import {
@@ -9,8 +8,8 @@ import {
     useNavigate,
     useParams,
 } from "react-router-dom";
-import {usersAPI} from "../../api/api";
 import {withAuthRedirect} from "../../hoc/withAuthRedirect";
+import {compose} from "redux";
 
 class ProfileContainer extends React.Component {
 
@@ -37,8 +36,6 @@ let mapStateToProps = (state) => ({
     profile: state.profilePage.profile,
 });
 
-
-let withUrlDataContainerComponent =  withRouter(ProfileContainer);
 function withRouter(Component) {
     function ComponentWithRouterProp(props) {
         let location = useLocation();
@@ -55,9 +52,9 @@ function withRouter(Component) {
     return ComponentWithRouterProp;
 }
 
-let AuthRedirectComponent = withAuthRedirect(withUrlDataContainerComponent);
 
-
-
-
-export default connect(mapStateToProps, {getUserProfile})(AuthRedirectComponent);
+export default compose(
+    connect(mapStateToProps, {getUserProfile}),
+    withRouter,
+    withAuthRedirect,
+)(ProfileContainer)
