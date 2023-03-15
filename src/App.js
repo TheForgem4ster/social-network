@@ -7,10 +7,11 @@ import UsersContainer from "./componets/Users/UsersContainer";
 import ProfileContainer from "./componets/Profile/ProfileContainer";
 import HeaderContainer from "./componets/Header/HeaderContainer";
 import LoginPage from "./componets/Login/Login";
-import {connect} from "react-redux";
+import {connect, Provider} from "react-redux";
 import {compose} from "redux";
 import {initializeApp} from "./redux/app-reducer";
 import Preloader from "./componets/common/Preloader/Preloader";
+import store from "./redux/redux-store";
 
 class App extends React.Component {
 
@@ -41,9 +42,20 @@ class App extends React.Component {
         );
     }
 }
+
 const mapStateToProps = (state) => ({
     initialized: state.app.initialized
 })
 
-export default compose(
+let AppContainer = compose(
     connect(mapStateToProps, {initializeApp})(App));
+
+const SamuraiJSApp = (props) => {
+    return <React.StrictMode>
+        <Provider store={store}>
+            <AppContainer/>
+        </Provider>
+    </React.StrictMode>
+}
+
+export default SamuraiJSApp;

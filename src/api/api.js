@@ -1,3 +1,4 @@
+import * as mobilenet from '@tensorflow-models/mobilenet';
 import axios from "axios";
 
 const instance = axios.create({
