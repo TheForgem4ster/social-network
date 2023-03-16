@@ -2,11 +2,11 @@ import React from "react";
 import s from "./Users.module.css";
 import userPhoto from "../assets/images/users.png";
 import {NavLink} from "react-router-dom";
-import Paginator from "../common/Paginator/Paginator";
 
 let User = ({user, followingInProgress, unfollow, follow}) => {
     return (
          <div >
+
                 <span>
                     <div>
                         <NavLink to={'/profile/' + user.id}>
