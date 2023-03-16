@@ -1,10 +1,10 @@
 import './App.css';
-import React from "react";
+import React, { Suspense }from "react";
 import Navbar from './componets/Navbar/Navbar';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import DialogsContainer from "./componets/Dialogs/DialogsContainer";
+
 import UsersContainer from "./componets/Users/UsersContainer";
-import ProfileContainer from "./componets/Profile/ProfileContainer";
+
 import HeaderContainer from "./componets/Header/HeaderContainer";
 import LoginPage from "./componets/Login/Login";
 import {connect, Provider} from "react-redux";
@@ -13,6 +13,10 @@ import {initializeApp} from "./redux/app-reducer";
 import Preloader from "./componets/common/Preloader/Preloader";
 import store from "./redux/redux-store";
 
+// import DialogsContainer from "./componets/Dialogs/DialogsContainer";
+const DialogsContainer = React.lazy(() => import('./componets/Dialogs/DialogsContainer'));
+const ProfileContainer = React.lazy(() => import('./componets/Profile/ProfileContainer'));
+
 class App extends React.Component {
 
     componentDidMount() {
@@ -20,7 +24,7 @@ class App extends React.Component {
     }
 
     render() {
-        if(!this.props.initialized){
+        if (!this.props.initialized) {
             return <Preloader/>
         }
 
@@ -30,16 +34,20 @@ class App extends React.Component {
                     <HeaderContainer/>
                     <Navbar/>
                     <div className='app-wrapper-content'>
-                        <Routes>
-                            <Route path="/profile/:userId?" element={<ProfileContainer/>}/>
-                            <Route path="/dialogs" element={<DialogsContainer/>}/>
-                            <Route path="/users" element={<UsersContainer/>}/>
-                            <Route path="/login" element={<LoginPage/>}/>
-                        </Routes>
+                        <Suspense fallback={<div><Preloader/></div>}>
+                            <Routes>
+                                <Route path="/profile/:userId?" element={<ProfileContainer/>}/>
+                                <Route path="/dialogs" element={
+                                    <DialogsContainer/>}/>
+                                <Route path="/users" element={<UsersContainer/>}/>
+                                <Route path="/login" element={<LoginPage/>}/>
+                            </Routes>
+                        </Suspense>
                     </div>
                 </div>
             </BrowserRouter>
-        );
+        )
+            ;
     }
 }
 
