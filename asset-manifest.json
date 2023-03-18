@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/TheForgem4ster/social-network/static/css/main.db16d683.css",
+    "main.js": "/TheForgem4ster/social-network/static/js/main.b9d586da.js",
+    "static/css/329.ff68611e.chunk.css": "/TheForgem4ster/social-network/static/css/329.ff68611e.chunk.css",
+    "static/js/329.fa3df93f.chunk.js": "/TheForgem4ster/social-network/static/js/329.fa3df93f.chunk.js",
+    "static/css/993.6d10b5d9.chunk.css": "/TheForgem4ster/social-network/static/css/993.6d10b5d9.chunk.css",
+    "static/js/993.836dec7d.chunk.js": "/TheForgem4ster/social-network/static/js/993.836dec7d.chunk.js",
+    "static/js/787.eaaab13d.chunk.js": "/TheForgem4ster/social-network/static/js/787.eaaab13d.chunk.js",
+    "index.html": "/TheForgem4ster/social-network/index.html",
+    "static/media/preloader.svg": "/TheForgem4ster/social-network/static/media/preloader.7a4f7dba13953d2777887d50554ebd3c.svg",
+    "main.db16d683.css.map": "/TheForgem4ster/social-network/static/css/main.db16d683.css.map",
+    "main.b9d586da.js.map": "/TheForgem4ster/social-network/static/js/main.b9d586da.js.map",
+    "329.ff68611e.chunk.css.map": "/TheForgem4ster/social-network/static/css/329.ff68611e.chunk.css.map",
+    "329.fa3df93f.chunk.js.map": "/TheForgem4ster/social-network/static/js/329.fa3df93f.chunk.js.map",
+    "993.6d10b5d9.chunk.css.map": "/TheForgem4ster/social-network/static/css/993.6d10b5d9.chunk.css.map",
+    "993.836dec7d.chunk.js.map": "/TheForgem4ster/social-network/static/js/993.836dec7d.chunk.js.map",
+    "787.eaaab13d.chunk.js.map": "/TheForgem4ster/social-network/static/js/787.eaaab13d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.db16d683.css",
+    "static/js/main.b9d586da.js"
+  ]
+}
