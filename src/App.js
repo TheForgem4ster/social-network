@@ -29,7 +29,7 @@ class App extends React.Component {
         }
 
         return (
-            <BrowserRouter>
+            <BrowserRouter basename="/">
                 <div className='app-wrapper'>
                     <HeaderContainer/>
                     <Navbar/>
