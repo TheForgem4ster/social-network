@@ -23,7 +23,6 @@ const AddNewPostForm = (props) => {
 
 const MyPost = React.memo(props => {
 
-    console.log("her");
     let postElements = props.posts.map(p => <Post message={p.message} likeCount={p.likeCounter} key={p.id}/>)
 
     let newPostText = React.createRef();
