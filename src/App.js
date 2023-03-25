@@ -1,10 +1,8 @@
 import './App.css';
-import React, { Suspense }from "react";
+import React, { Suspense } from "react";
 import Navbar from './componets/Navbar/Navbar';
-import {BrowserRouter, Route, Routes} from "react-router-dom";
-
+import {BrowserRouter, Route, Routes, Navigate} from "react-router-dom";
 import UsersContainer from "./componets/Users/UsersContainer";
-
 import HeaderContainer from "./componets/Header/HeaderContainer";
 import LoginPage from "./componets/Login/Login";
 import {connect, Provider} from "react-redux";
@@ -36,11 +34,12 @@ class App extends React.Component {
                     <div className='app-wrapper-content'>
                         <Suspense fallback={<div><Preloader/></div>}>
                             <Routes>
+                                <Route path="/" element={<Navigate to="/profile" />} />
                                 <Route path="/profile/:userId?" element={<ProfileContainer/>}/>
-                                <Route path="/dialogs" element={
-                                    <DialogsContainer/>}/>
+                                <Route path="/dialogs" element={<DialogsContainer/>}/>
                                 <Route path="/users" element={<UsersContainer/>}/>
                                 <Route path="/login" element={<LoginPage/>}/>
+                                <Route path="*" element={<div>404 not found</div>}/>
                             </Routes>
                         </Suspense>
                     </div>
